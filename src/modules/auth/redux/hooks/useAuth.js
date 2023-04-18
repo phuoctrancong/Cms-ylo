@@ -7,7 +7,7 @@ import authActions from "../actions/auth";
 
 export const useAuth = () => {
   const isLoading = useSelector((state) => get(state, "auth.isLoading"));
-  const userInfo = useSelector((state) => get(state, "auth.userInfo"));
+  const userInfo = useSelector((state) => get(state, "userInfo.userInfo"));
   const dispatch = useDispatch();
   const actions = useMemo(
     () => bindActionCreators(authActions, dispatch),

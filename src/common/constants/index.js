@@ -35,3 +35,7 @@ export const UNSAFE_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm";
 export const IMPORT_EXPORT_DATE_FORMAT = "dd-MM-yyyy_HH_mm_SS";
 
 export const DEFAULT_TIME = "00:00";
+export const ROLE = {
+  USER: 0,
+  ADMIN: 1,
+};

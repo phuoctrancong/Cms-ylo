@@ -22,36 +22,45 @@ import { useAuth } from "../../redux/hooks/useAuth";
 import { isAuth } from "../../../../utils";
 import * as Yup from "yup";
 import useUserInfo from "../../redux/hooks/useUserInfo";
+import { useSelector } from "react-redux";
+import { get } from "lodash";
+import { ROLE } from "../../../../common/constants";
+import NotAuthorized from "../../../../components/Authorized";
 
 const Login = () => {
   const { t } = useTranslation("auth");
   const classes = useClasses(style);
   const [visible, setVisible] = useState(false);
   const [error, setError] = useState("");
-  const { actions, isLoading } = useAuth();
   const { actions: userInfoAction } = useUserInfo();
+  const { actions, isLoading } = useAuth();
+  const dataUser = useSelector((state) => get(state, "userInfo.userInfo"));
   const location = useLocation();
   const { callbackUrl } = qs.parse(location.search);
+  const roles = [ROLE.ADMIN];
   const navigate = useNavigate();
   const initialValues = {
     email: "",
     password: "",
   };
+  console.log("daraUser", dataUser);
   const handleSubmit = (values) => {
     const params = { ...values };
     actions.login(
       params,
       () => {
-        navigate(callbackUrl || "/");
         userInfoAction.getUserInfo();
+        if (!roles.includes(dataUser?.role)) {
+          navigate(callbackUrl || "/home-page");
+        }
       },
       (e) => {
         setError(e);
       }
     );
   };
-  if (isAuth()) {
-    return <Navigate to="/" />;
+  if (isAuth() && roles.includes(dataUser?.role)) {
+    return <Navigate to="/home-page" />;
   }
   return (
     <Paper className={classes.paper}>

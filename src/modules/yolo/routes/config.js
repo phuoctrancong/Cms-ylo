@@ -1,6 +1,10 @@
 export const ROUTE = {
   HOMEPAGE: {
-    PATH: "/",
+    PATH: "/home-page",
     TITLE: "homepage",
+  },
+  PRODUCT: {
+    PATH: "/product",
+    TITLE: "product",
   },
 };

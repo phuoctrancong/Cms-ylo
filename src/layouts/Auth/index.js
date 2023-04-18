@@ -1,23 +1,33 @@
-// import React from "react";
-// import PropTypes from "prop-types";
-// import { Box } from "@mui/material";
+import React from "react";
 
-// const AuthLayout = ({ children }) => {
-//   return (
-//     <div>
-//       <Box className={}>
-//         <Box className={classes.main}>
-//           <Box className={classes.box}>{children}</Box>
-//         </Box>
-//       </Box>
-//     </div>
-//   );
-// };
-// AuthLayout.defaultProps = {
-//   children: null,
-// };
+import { Box } from "@mui/material";
+import PropTypes from "prop-types";
+import style from "./style";
+import { useClasses } from "../../themes";
 
-// AuthLayout.propTypes = {
-//   children: PropTypes.node,
-// };
-// export default AuthLayout;
+const AuthLayout = ({ children }) => {
+  const classes = useClasses(style);
+
+  return (
+    <Box className={classes.root}>
+      <Box className={classes.leftPanel}>
+        <Box className={classes.logo}></Box>
+      </Box>
+      <Box className={classes.rightPanel}>
+        <Box className={classes.main}>
+          <Box className={classes.box}>{children}</Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+AuthLayout.defaultProps = {
+  children: null,
+};
+
+AuthLayout.propTypes = {
+  children: PropTypes.node,
+};
+
+export default AuthLayout;

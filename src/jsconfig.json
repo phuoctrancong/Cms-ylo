@@ -21,7 +21,7 @@
       "@services/*": ["src/services/*"],
       "@store/*": ["src/store/*"],
       "@themes/*": ["src/themems/*"],
-      "@utils/*": ["src/ultils/*"]
+      "@utils/*": ["src/utils/*"]
     }
   }
 }
