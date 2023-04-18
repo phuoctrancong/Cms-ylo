@@ -12,7 +12,16 @@
     "jsx": "react",
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@assets/*": ["src/assets/*"],
+      "@common/*": ["src/common/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@module/*": ["src/module/*"],
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"],
+      "@store/*": ["src/store/*"],
+      "@themes/*": ["src/themems/*"],
+      "@utils/*": ["src/ultils/*"]
     }
   }
 }
