@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import { getIn } from 'formik'
-import PropTypes from 'prop-types'
+import { getIn } from "formik";
+import PropTypes from "prop-types";
 
-import TextField from '~/components/TextField'
+import TextField from "./TextField";
 
 const FormikTextField = ({
   form,
@@ -21,34 +21,34 @@ const FormikTextField = ({
       (!!getIn(form.touched, field.name) && !!getIn(form.errors, field.name))
     }
     helperText={helperText || getIn(form.errors, field.name)}
-    value={field.value ?? ''}
+    value={field.value ?? ""}
     onBlur={(e) => {
-      form.setFieldTouched(field.name, true)
+      form.setFieldTouched(field.name, true);
 
-      const val = e?.target?.value
-      if (typeof val === 'string' && val?.trim() !== val) {
-        form.setFieldValue(field.name, val?.trim())
+      const val = e?.target?.value;
+      if (typeof val === "string" && val?.trim() !== val) {
+        form.setFieldValue(field.name, val?.trim());
       }
     }}
     onChange={(_, val) => {
-      if (typeof onInput === 'function') {
-        onInput(val)
+      if (typeof onInput === "function") {
+        onInput(val);
       } else {
-        onChange(val)
-        form.setFieldValue(field.name, val)
+        onChange(val);
+        form.setFieldValue(field.name, val);
       }
     }}
     {...props}
   />
-)
+);
 
 FormikTextField.defaultProps = {
   form: {},
   field: {},
   onChange: () => {},
   error: false,
-  helperText: '',
-}
+  helperText: "",
+};
 
 FormikTextField.propTypes = {
   form: PropTypes.shape(),
@@ -57,6 +57,6 @@ FormikTextField.propTypes = {
   onChange: PropTypes.func,
   error: PropTypes.bool,
   helperText: PropTypes.string,
-}
+};
 
-export default FormikTextField
+export default FormikTextField;

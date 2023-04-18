@@ -10,9 +10,9 @@
     "sourceMap": true,
     "outDir": "./dist",
     "jsx": "react",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "~/*": ["src/*"]
+      "@components/*": ["src/components/*"]
     }
   }
 }

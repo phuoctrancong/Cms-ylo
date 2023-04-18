@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import { getIn } from 'formik'
-import PropTypes from 'prop-types'
+import { getIn } from "formik";
+import PropTypes from "prop-types";
 
-import Autocomplete from '~/components/Autocomplete'
+import Autocomplete from "./Autocomplete";
 
 const FormikAutocomplete = ({
   field,
@@ -21,20 +21,20 @@ const FormikAutocomplete = ({
     }
     helperText={helperText || getIn(form.errors, field.name)}
     onChange={(v) => {
-      onChange(v)
-      form.setFieldValue(field.name, v)
+      onChange(v);
+      form.setFieldValue(field.name, v);
     }}
     {...props}
   />
-)
+);
 
 FormikAutocomplete.defaultProps = {
   field: {},
   form: {},
   onChange: () => {},
   error: false,
-  helperText: '',
-}
+  helperText: "",
+};
 
 FormikAutocomplete.propTypes = {
   field: PropTypes.shape(),
@@ -42,6 +42,6 @@ FormikAutocomplete.propTypes = {
   onChange: PropTypes.func,
   error: PropTypes.bool,
   helperText: PropTypes.string,
-}
+};
 
-export default FormikAutocomplete
+export default FormikAutocomplete;

@@ -15,7 +15,6 @@ const flatten = (arr) => {
     []
   );
 };
-// export const appRoutes = [...publicRoutes, ...authRoutes, ...privateRoutes];
 export const privateRoutes = [...yoloRoutes];
 export const privateRoutesFlatten = flatten(privateRoutes);
 export const appRoutes = [...publicRoutes, ...authRoutes, ...privateRoutes];

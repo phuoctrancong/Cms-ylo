@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-// import Button from "~/components/Button";
+// import Button from "./Button";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
