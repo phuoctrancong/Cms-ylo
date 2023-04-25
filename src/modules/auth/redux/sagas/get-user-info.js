@@ -4,7 +4,6 @@ import {
   getUserInfoSuccess,
   GET_USER_INFO_START,
 } from "../actions/user-info";
-
 import { api } from "../../../../services/api";
 /**
  * Search user API
@@ -23,7 +22,6 @@ const getUserInfoApi = () => {
 function* doGetUserInfo(action) {
   try {
     const response = yield call(getUserInfoApi, action?.payload);
-
     if (response?.statusCode === 200) {
       yield put(getUserInfoSuccess(response.data));
 

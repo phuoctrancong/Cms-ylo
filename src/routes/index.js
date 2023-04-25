@@ -1,5 +1,7 @@
 import { omit } from "lodash";
 import authRoutes from "../modules/auth/routes";
+import homeRoute from "../modules/home/routes";
+
 import publicRoutes from "../modules/public/routes";
 import yoloRoutes from "../modules/yolo/routes";
 
@@ -15,7 +17,7 @@ const flatten = (arr) => {
     []
   );
 };
-export const privateRoutes = [...yoloRoutes];
+export const privateRoutes = [homeRoute, ...yoloRoutes];
 export const privateRoutesFlatten = flatten(privateRoutes);
 export const appRoutes = [...publicRoutes, ...authRoutes, ...privateRoutes];
 export const appRoutesFlatten = flatten(appRoutes);

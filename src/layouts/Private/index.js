@@ -2,17 +2,15 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
-import { Navigate, Redirect, useLocation, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import { isAuth } from "../../utils";
 import { useApp } from "../../common/hook/useApp";
-import { ROLE } from "../../common/constants";
 import Sidebar from "../../components/SideBar";
-import HomePage from "../../modules/yolo/feature/homepage";
 
 const PrivateLayout = ({ children }) => {
   const { canAccess } = useApp();
-  if (!isAuth() && canAccess !== ROLE.ADMIN) {
+  if (!isAuth() && !canAccess) {
     return <Navigate to="/login" />;
   }
   return (
@@ -23,8 +21,8 @@ const PrivateLayout = ({ children }) => {
         height: "100%",
       }}
     >
+      <Box sx={{ flex: 1, overflow: "hidden" }}>{children}</Box>
       <Sidebar />
-      {/* <Box sx={{ flex: 1, overflow: "hidden" }}>{children}</Box> */}
     </Box>
   );
 };

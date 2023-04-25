@@ -5,8 +5,8 @@ import useUserInfo from "../modules/auth/redux/hooks/useUserInfo";
 import { getLocalItem, isAuth } from "../utils";
 
 export const AppContext = createContext({});
-
 export const AppProvider = ({ children }) => {
+  const roles = [ROLE.ADMIN];
   const [refreshKey, setRefreshKey] = useState("");
   // const { actions: notiActions } = useNotification();
   const {
@@ -14,7 +14,7 @@ export const AppProvider = ({ children }) => {
     actions: userActions,
   } = useUserInfo();
   const isAuthenticated = isAuth();
-  const canAccess = getLocalItem("userInfo")?.role;
+  const canAccess = roles.includes(getLocalItem("userInfo")?.role);
   useEffect(() => {
     if (isAuthenticated && !userInfo?.id && !isLoadingUser) {
       userActions.getUserInfo();

@@ -1,18 +1,18 @@
-import queryString from 'query-string'
+import queryString from "query-string";
 
 const parse = (str, opts = {}) =>
   queryString.parse(str, {
-    arrayFormat: 'comma',
+    arrayFormat: "comma",
     parseNumbers: true,
     parseBooleans: true,
     ...opts,
-  })
+  });
 
 const stringify = (obj, opts = {}) =>
   queryString.stringify(obj, {
-    arrayFormat: 'comma',
+    arrayFormat: "comma",
     ...opts,
-  })
+  });
 
 const add = (str, obj, stringifyOptions, parseOptions) =>
   stringify(
@@ -20,26 +20,26 @@ const add = (str, obj, stringifyOptions, parseOptions) =>
       ...parse(str, parseOptions),
       ...obj,
     },
-    stringifyOptions,
-  )
+    stringifyOptions
+  );
 
 const omit = (str, key) => {
-  const parsed = parse(str)
+  const parsed = parse(str);
 
-  if (typeof key === 'string') {
-    delete parsed[key]
+  if (typeof key === "string") {
+    delete parsed[key];
   } else if (Array.isArray(key)) {
     key.forEach((k) => {
-      delete parsed[k]
-    })
+      delete parsed[k];
+    });
   }
 
-  return stringify(parsed)
-}
+  return stringify(parsed);
+};
 
 export default {
   parse,
   stringify,
   add,
   omit,
-}
+};

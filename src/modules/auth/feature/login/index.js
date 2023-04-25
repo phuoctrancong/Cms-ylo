@@ -34,7 +34,6 @@ const Login = () => {
   const [error, setError] = useState("");
   const { actions: userInfoAction } = useUserInfo();
   const { actions, isLoading } = useAuth();
-  const dataUser = useSelector((state) => get(state, "userInfo.userInfo"));
   const location = useLocation();
   const { callbackUrl } = qs.parse(location.search);
   const roles = [ROLE.ADMIN];
@@ -43,15 +42,14 @@ const Login = () => {
     email: "",
     password: "",
   };
-  console.log("daraUser", dataUser);
   const handleSubmit = (values) => {
     const params = { ...values };
     actions.login(
       params,
       () => {
         userInfoAction.getUserInfo();
-        if (!roles.includes(dataUser?.role)) {
-          navigate(callbackUrl || "/home-page");
+        if (isAuth()) {
+          navigate(callbackUrl || "/");
         }
       },
       (e) => {
@@ -59,8 +57,8 @@ const Login = () => {
       }
     );
   };
-  if (isAuth() && roles.includes(dataUser?.role)) {
-    return <Navigate to="/home-page" />;
+  if (isAuth()) {
+    return <Navigate to="/" />;
   }
   return (
     <Paper className={classes.paper}>

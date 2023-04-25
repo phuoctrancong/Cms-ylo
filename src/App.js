@@ -29,15 +29,15 @@ function App() {
           <Suspense fallback={() => null}>
             <I18nextProvider i18n={i18n}>
               <Provider store={store}>
-                {/* <AppProvider> */}
-                <LocalizationProvider
-                  dateAdapter={DateFns}
-                  locale={getLocale()}
-                ></LocalizationProvider>
-                <ReactNotifications />
-                <BrowserRouter>
-                  <Routes>
-                    {publicRoutes.map((route) => (
+                <AppProvider>
+                  <LocalizationProvider
+                    dateAdapter={DateFns}
+                    locale={getLocale()}
+                  ></LocalizationProvider>
+                  <ReactNotifications />
+                  <BrowserRouter>
+                    <Routes>
+                      {/* {publicRoutes.map((route) => (
                       <Route
                         key={route.path}
                         path={route.path}
@@ -47,33 +47,44 @@ function App() {
                           </PublicLayout>
                         )}
                       />
-                    ))}
-                    {authRoutes.map((route) => (
+                    ))} */}
+                      {/* {publicRoutes.map((route) => (
                       <Route
                         key={route.path}
                         path={route.path}
                         element={
-                          <AuthLayout>
+                          <PublicLayout>
                             <route.component />
-                          </AuthLayout>
+                          </PublicLayout>
                         }
                       />
-                    ))}
-                    {privateRoutesFlatten.map((route) => (
-                      <Route
-                        key={route.path}
-                        path={route.path}
-                        element={
-                          <PrivateLayout>
-                            <route.component />
-                          </PrivateLayout>
-                        }
-                      />
-                    ))}
-                    <Route path="*" element={<NotFoundPage />} />
-                  </Routes>
-                </BrowserRouter>
-                {/* </AppProvider> */}
+                    ))} */}
+                      {authRoutes.map((route) => (
+                        <Route
+                          key={route.path}
+                          path={route.path}
+                          element={
+                            <AuthLayout>
+                              <route.component />
+                            </AuthLayout>
+                          }
+                        />
+                      ))}
+                      {privateRoutesFlatten.map((route) => (
+                        <Route
+                          key={route.path}
+                          path={route.path}
+                          element={
+                            <PrivateLayout>
+                              <route.component />
+                            </PrivateLayout>
+                          }
+                        />
+                      ))}
+                      <Route path="*" element={<NotFoundPage />} />
+                    </Routes>
+                  </BrowserRouter>
+                </AppProvider>
               </Provider>
             </I18nextProvider>
           </Suspense>

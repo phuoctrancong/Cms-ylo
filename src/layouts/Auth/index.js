@@ -7,7 +7,6 @@ import { useClasses } from "../../themes";
 
 const AuthLayout = ({ children }) => {
   const classes = useClasses(style);
-
   return (
     <Box className={classes.root}>
       <Box className={classes.leftPanel}>
