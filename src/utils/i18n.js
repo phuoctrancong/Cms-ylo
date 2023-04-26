@@ -2,12 +2,13 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import viAuth from "../assets/locales/vi/auth.json";
 import viGeneral from "../assets/locales/vi/general.json";
+import viYolo from "../assets/locales/vi/yolo.json";
 import { DEFAULT_LANG, LANG_OPTIONS } from "../common/constants";
 const resources = {
   [LANG_OPTIONS.VI]: {
     general: viGeneral,
     auth: viAuth,
-    // yolo: viYolo,
+    yolo: viYolo,
   },
   // [LANG_OPTIONS.EN]: {
   //   general: enGeneral,
@@ -34,11 +35,7 @@ i18n.use(initReactI18next).init({
   resources: resources,
   lng: getCurrentLang(),
   fallbackLng: DEFAULT_LANG,
-  ns: [
-    "general",
-    "auth",
-    //  'yolo'
-  ],
+  ns: ["general", "auth", "yolo"],
   defaultNS: ["general"],
   interpolation: {
     escapeValue: false,

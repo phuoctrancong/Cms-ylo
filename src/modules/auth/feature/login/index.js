@@ -1,29 +1,15 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Checkbox,
-  Container,
-  FormControlLabel,
-  FormHelperText,
-  IconButton,
-  Paper,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button, Paper, Typography } from "@mui/material";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useTranslation } from "react-i18next";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useClasses } from "../../../../themes";
-import { loginSchema } from "./schema";
 import style from "./style";
 import qs from "../../../../utils/qs";
 import { useAuth } from "../../redux/hooks/useAuth";
 import { isAuth } from "../../../../utils";
 import * as Yup from "yup";
 import useUserInfo from "../../redux/hooks/useUserInfo";
-import { useSelector } from "react-redux";
-import { get } from "lodash";
 import { ROLE } from "../../../../common/constants";
 import NotAuthorized from "../../../../components/Authorized";
 

@@ -21,8 +21,8 @@ const PrivateLayout = ({ children }) => {
         height: "100%",
       }}
     >
-      <Box sx={{ flex: 1, overflow: "hidden" }}>{children}</Box>
       <Sidebar />
+      <Box sx={{ flex: 1, overflow: "hidden" }}>{children}</Box>
     </Box>
   );
 };

@@ -1,0 +1,22 @@
+{
+  "general": {
+    "search": "Tìm kiếm",
+    "list": "Danh sách",
+    "day": "ngày",
+    "warehouseSectorName": "Tên khu vực",
+    "warehouseShelfName": "Tên kệ",
+    "warehousePalletName": "Tên tầng",
+    "create": "Tạo mới",
+    "selectWarehouse": "Chọn kho",
+    "updateStatus": "Cập nhật trạng thái",
+    "status": "Trạng thái",
+    "active": "Hoạt động",
+    "inactive": "Tạm dừng",
+    "confirmMessage": "Bạn chắc chắn muốn cập nhật trạng thái bản ghi?"
+  },
+  "menu": {
+    "yolo": "YOLO",
+    "dashboard": "Dashboard",
+    "productManagement": "Quản lý sản phẩm"
+  }
+}
