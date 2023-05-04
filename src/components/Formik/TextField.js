@@ -2,8 +2,7 @@ import React from "react";
 
 import { getIn } from "formik";
 import PropTypes from "prop-types";
-
-import TextField from "./TextField";
+import TextField from "../TextField";
 
 const FormikTextField = ({
   form,

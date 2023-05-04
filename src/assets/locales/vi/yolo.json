@@ -17,6 +17,35 @@
   "menu": {
     "yolo": "YOLO",
     "dashboard": "Dashboard",
-    "productManagement": "Quản lý sản phẩm"
+    "productManagement": "Quản lý sản phẩm",
+    "productManagementCreate": "Tạo sản phẩm",
+    "productManagementEdit": "Sửa sản phẩm",
+    "productManagementDetail": "Chi tiết sản phẩm",
+    "categoryManagement": "Quản lý danh mục",
+    "categoryManagementCreate": "Tạo danh mục",
+    "categoryManagementEdit": "Sửa danh mục",
+    "categoryManagementDetail": "Chi tiết danh mục",
+    "colorManagement": "Quản lý màu sắc",
+    "colorManagementCreate": "Tạo màu sắc",
+    "colorManagementEdit": "Sửa màu sắc",
+    "colorManagementDetail": "Chi tiết màu sắc",
+    "sizeManagement": "Quản lý kích thước",
+    "sizeManagementCreate": "Tạo kích thước",
+    "sizeManagementEdit": "Sửa kích thước",
+    "sizeManagementDetail": "Chi tiết kích thước",
+    "userManagement": "Quản lý người dùng hệ thống",
+    "userManagementCreate": "Tạo người dùng hệ thống",
+    "userManagementEdit": "Sửa người dùng hệ thống",
+    "userManagementDetail": "Chi tiết người dùng hệ thống",
+    "orderManagement": "Quản lý đơn hàng",
+    "orderManagementCreate": "Tạo đơn hàng",
+    "orderManagementEdit": "Sửa đơn hàng",
+    "orderManagementDetail": "Chi tiết đơn hàng"
+  },
+  "defineColor": {
+    "searchPlaceholder": "Tìm kiếm màu sắc theo mã hoặc tên",
+    "code": "Mã màu",
+    "name": "Tên màu",
+    "description": "Mô tả"
   }
 }

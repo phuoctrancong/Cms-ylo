@@ -26,27 +26,97 @@ export const ROUTE = {
     },
   },
   CATEGORY_MANAGEMENT: {
-    PATH: "/yls/category",
-    TITLE: "categoryManagement",
+    LIST: {
+      PATH: "/yls/category",
+      TITLE: "categoryManagement",
+    },
+    CREATE: {
+      PATH: "/yls/category-management/create",
+      TITLE: "categoryManagementCreate",
+    },
+    DETAIL: {
+      PATH: "/yls/category-management/:id/detail",
+      TITLE: "categoryManagementDetail",
+    },
+    EDIT: {
+      PATH: "/yls/category-management/:id/edit",
+      TITLE: "categoryManagementEdit",
+    },
   },
   SUBCATEGORY_MANAGEMMENT: {
     PATH: "/yls/sub-category",
     TITLE: "subCategoryManagement",
   },
   COLOR_MANAGEMENT: {
-    PATH: "/yls/color",
-    TITLE: "colorManagement",
+    LIST: {
+      PATH: "/yls/color",
+      TITLE: "colorManagement",
+    },
+    CREATE: {
+      PATH: "/yls/color-management/create",
+      TITLE: "colorManagementCreate",
+    },
+    DETAIL: {
+      PATH: "/yls/color-management/:id/detail",
+      TITLE: "colorManagementDetail",
+    },
+    EDIT: {
+      PATH: "/yls/color-management/:id/edit",
+      TITLE: "colorManagementEdit",
+    },
   },
   SIZE_MANAGEMENT: {
-    PATH: "/yls/size",
-    TITLE: "sizeManagement",
+    LIST: {
+      PATH: "/yls/size",
+      TITLE: "sizeManagement",
+    },
+    CREATE: {
+      PATH: "/yls/size-management/create",
+      TITLE: "sizeManagementCreate",
+    },
+    DETAIL: {
+      PATH: "/yls/size-management/:id/detail",
+      TITLE: "sizeManagementDetail",
+    },
+    EDIT: {
+      PATH: "/yls/size-management/:id/edit",
+      TITLE: "sizeManagementEdit",
+    },
   },
   USER_MANAGEMENT: {
-    PATH: "/yls/user-operator",
-    TITLE: "userManagement",
+    LIST: {
+      PATH: "/yls/user",
+      TITLE: "userManagement",
+    },
+    CREATE: {
+      PATH: "/yls/user-management/create",
+      TITLE: "userManagementCreate",
+    },
+    DETAIL: {
+      PATH: "/yls/user-management/:id/detail",
+      TITLE: "userManagementDetail",
+    },
+    EDIT: {
+      PATH: "/yls/user-management/:id/edit",
+      TITLE: "userManagementEdit",
+    },
   },
   ORDER_MANAGEMENT: {
-    PATH: "/yls/order",
-    TITLE: "orderManagement",
+    LIST: {
+      PATH: "/yls/order",
+      TITLE: "orderManagement",
+    },
+    CREATE: {
+      PATH: "/yls/order-management/create",
+      TITLE: "orderManagementCreate",
+    },
+    DETAIL: {
+      PATH: "/yls/order-management/:id/detail",
+      TITLE: "orderManagementDetail",
+    },
+    EDIT: {
+      PATH: "/yls/order-management/:id/edit",
+      TITLE: "orderManagementEdit",
+    },
   },
 };

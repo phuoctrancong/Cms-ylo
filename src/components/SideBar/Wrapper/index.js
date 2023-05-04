@@ -2,7 +2,6 @@ import React from "react";
 
 import {
   Box,
-  Icon,
   //  Hidden
 } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
@@ -15,6 +14,7 @@ import yoloRoutes from "../../../modules/yolo/routes";
 import ListMenu from "../ListMenu";
 import { useSidebar } from "../hooks";
 import { Drawer, DrawerHeader } from "./style";
+import Icon from "../../Icon";
 
 export default function Sidebar() {
   const { pathname } = useLocation();
@@ -56,9 +56,11 @@ export default function Sidebar() {
               }}
             >
               {isMinimal ? (
-                <img src="" alt="" style={{ maxHeight: 37 }} />
+                // <img src="" alt="" style={{ maxHeight: 37 }} />
+                <div>YOLO</div>
               ) : (
-                <img src="" alt="" style={{ maxHeight: 51 }} />
+                <div>YOLO</div>
+                // <img src="" alt="" style={{ maxHeight: 51 }} />
               )}
             </Link>
           </Box>

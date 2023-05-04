@@ -39,3 +39,45 @@ export const ROLE = {
   USER: 0,
   ADMIN: 1,
 };
+export const TEXTFIELD_ALLOW = {
+  NUMERIC: /[^0-9]/g,
+  POSITIVE_DECIMAL: /[^0-9.]/g,
+  ALPHABET: /[^a-zA-Z]/g,
+  ALPHANUMERIC: /[^0-9a-zA-Z]/g,
+  ALPHANUMERIC_DOT: /[^0-9a-zA-Z.]/g,
+  ALPHANUMERIC_SPECIALS:
+    /[^0-9a-zA-Z-._!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]/g,
+  EXCEPT_SPECIALS: /[._!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]/g,
+  EXCEPT_SPACES: /[\s]/g,
+  ALPHANUMERIC_DOT_UNDERSCORE: /[^0-9a-zA-Z._]/g,
+  REGEX_CODE_VIETNAMESE:
+    /[^a-zA-Z0-9ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêếìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s&,\/._]+$/g,
+};
+
+export const TEXTFIELD_PREVENT = {
+  [TEXTFIELD_ALLOW.NUMERIC]: [",", ".", "-", "+", "e", "E"],
+  [TEXTFIELD_ALLOW.POSITIVE_DECIMAL]: [",", "-", "+", "e", "E"],
+};
+export const BULK_ACTION = {
+  APPROVE: 1,
+  REJECT: 2,
+  DELETE: 3,
+};
+
+export const BULK_ACTION_OPTIONS = [
+  {
+    value: BULK_ACTION.APPROVE,
+    text: "bulkActions.approve",
+    icon: "tick",
+  },
+  {
+    value: BULK_ACTION.REJECT,
+    text: "bulkActions.reject",
+    icon: "remove",
+  },
+  {
+    value: BULK_ACTION.DELETE,
+    text: "bulkActions.delete",
+    icon: "delete",
+  },
+];
