@@ -8,7 +8,6 @@ import addNotification from "../../utils/toast";
 // common base instance
 const BASE_URL = process.env.REACT_APP_HOST + "/api";
 const REPORT_URL = process.env.REACT_APP_REPORT_HOST + "/api";
-
 const HEADERS_MULTIPLE_PART = {
   "Content-Type": "multipart/form-data; boundary=something",
 };

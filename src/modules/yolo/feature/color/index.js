@@ -1,11 +1,12 @@
 import { Button, IconButton } from "@mui/material";
 import { Field, Form, Formik, FormikProps } from "formik";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useQueryState } from "../../../../common/hook/useQueryState";
 import Icon from "../../../../components/Icon";
 import Page from "../../../../components/Page";
+import useDefineColor from "../../redux/hooks/useDefineColor";
 import { ROUTE } from "../../routes/config";
 const breadcrumbs = [
   {
@@ -20,6 +21,11 @@ const MyInput = ({ field, form, ...props }) => {
 function Color() {
   const { t } = useTranslation(["yolo"]);
   const navigate = useNavigate();
+
+  const {
+    data: { colorList, isLoading, total },
+    actions,
+  } = useDefineColor();
   const DEFAULT_FILTERS = {
     code: "",
     name: "",
@@ -43,6 +49,22 @@ function Color() {
   } = useQueryState({
     filters: DEFAULT_FILTERS,
   });
+
+  const refreshData = () => {
+    const params = {
+      keyword: keyword.trim(),
+      page: page,
+      limit: pageSize,
+      // filter: convertFilterParams(filters, [
+      //   { field: 'createdAt', filterFormat: 'date' },
+      // ]),
+      // sort: convertSortParams(sort),
+    };
+    actions.seachColors(params);
+  };
+  useEffect(() => {
+    refreshData();
+  }, [page, pageSize, sort, filters, keyword]);
   const columns = useMemo(() => [
     {
       field: "code",

@@ -13,7 +13,6 @@ import { Field } from "../../../Formik";
 const SearchBox = ({ onSearch, placeholder, renderSearchBox }) => {
   const classes = useClasses(style);
   const { t } = useTranslation();
-  console.log("first", renderSearchBox);
   if (typeof renderSearchBox === "function") {
     return <Box className={classes.root}>{renderSearchBox()}</Box>;
   }
